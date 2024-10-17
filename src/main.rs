@@ -36,6 +36,23 @@
 
 
 // todo demo3
-fn main() {
+// 关联函数学习
 
+struct Rectangle{
+    width: u32,
+    height: u32,
+}
+
+impl Rectangle{
+    // 关联函数
+    fn new(width: u32, height: u32) -> Rectangle{
+        Rectangle{width, height}
+    }
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+}
+fn main() {
+    let rect = Rectangle::new(30, 50);
+    println!("rect area is {}", rect.area());
 }
